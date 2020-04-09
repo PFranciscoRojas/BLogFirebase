@@ -1,0 +1,26 @@
+{
+  "name": "blog-geek",
+  "version": "1.0.0",
+  "description": "Blog Geek",
+  "main": "app/general.js",
+  "scripts": {
+    "start": "live-server"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jggomez/blogvideos-ucc.git"
+  },
+  "keywords": [
+    "blog"
+  ],
+  "author": "Juan Guillermo Gómez",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jggomez/blogvideos-ucc/issues"
+  },
+  "homepage": "https://github.com/jggomez/blogvideos-ucc#readme",
+  "devDependencies": {
+    "live-server": "^1.2.1"
+  },
+  "dependencies": {}
+}
