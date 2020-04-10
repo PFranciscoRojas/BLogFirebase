@@ -8,7 +8,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/jggomez/blogvideos-ucc.git"
+    "url": "git+https://github.com/SowSkull/BLogFirebase"
   },
   "keywords": [
     "blog"
@@ -16,9 +16,9 @@
   "author": "Juan Guillermo Gómez",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/jggomez/blogvideos-ucc/issues"
+    "url": "https://github.com/SowSkull/BLogFirebase/issues"
   },
-  "homepage": "https://github.com/jggomez/blogvideos-ucc#readme",
+  "homepage": "https://github.com/SowSkull/BLogFirebase#readme",
   "devDependencies": {
     "live-server": "^1.2.1"
   },

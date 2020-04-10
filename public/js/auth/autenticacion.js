@@ -13,7 +13,7 @@ class Autenticacion {
     )
 
     $('.modal').modal('close')*/
-    
+    firebase.auth(),
   }
 
   authCuentaGoogle () {
