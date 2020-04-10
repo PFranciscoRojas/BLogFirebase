@@ -6,6 +6,8 @@ $(() => {
         const nombres = $('#nombreContactoReg').val();
         const email = $('#emailContactoReg').val();
         const password = $('#passwordReg').val();
+        const auth = new Autenticacion()
+        auth.crearCuentaEmailPass(email,password,nombres)
         // TODO : LLamar crear cuenta con email
     });
 
@@ -13,6 +15,8 @@ $(() => {
         const email = $('#emailSesion').val();
         const password = $('#passwordSesion').val();
         // TODO : LLamar auth cuenta con email
+        const auth = new Autenticacion()
+        auth.autEmailPass(email,password)
     });
 
     //$("#authGoogle").click(() => //AUTH con GOOGLE);

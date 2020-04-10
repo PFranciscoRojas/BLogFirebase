@@ -1,34 +1,62 @@
 class Autenticacion {
-  autEmailPass (email, password) {
-    //$('#avatar').attr('src', 'imagenes/usuario_auth.png')
-    //Materialize.toast(`Bienvenido ${result.user.displayName}`, 5000)
-    //$('.modal').modal('close')
-   
+  autEmailPass(email, password) {
+
+    firebase.auth().signInWithEmailAndPassword(email, password)
+      .then(result => {
+        if (result.user.emailVerified) {
+          $('#avatar').attr('src', 'imagenes/usuario_auth.png')
+          Materialize.toast(`Bienvenido ${result.user.displayName}`, 5000)
+        } else {
+          firebase.auth().signOut()
+          Materialize.toast(`Por favor realiza la verificación de la cuenta`, 5000)
+        }
+        $('.modal').modal('close')
+      })
   }
 
-  crearCuentaEmailPass (email, password, nombres) {
-    /*Materialize.toast(
-      `Bienvenido ${nombres}, debes realizar el proceso de verificación`,
-      4000
-    )
+  crearCuentaEmailPass(email, password, nombres) {
+    firebase.auth().createUserWithEmailAndPassword(email, password)
+      .then(result => {
+        result.user.updateProfile({
+          displayName: nombres
+        })
 
-    $('.modal').modal('close')*/
-    
+        const configuration = {
+          url: 'http://localhost:8080/public/'
+        }
+
+        result.user.sendEmailVerification(configuration).catch(error => {
+          console.error(error)
+          Materialize.toast(error.message, 400)
+        })
+
+        firebase.auth().signOut()
+        Materialize.toast(
+          `Bienvenido ${nombres}, debes realizar el proceso de verificación`,
+          4000
+        )
+
+        $('.modal').modal('close')
+      })
+      .catch(error => {
+        console.error(error)
+        Materialize.toast(error.message, 4000)
+      })
   }
 
-  authCuentaGoogle () {
+  authCuentaGoogle() {
     //$('#avatar').attr('src', result.user.photoURL)
     //$('.modal').modal('close')
     //Materialize.toast(`Bienvenido ${result.user.displayName} !! `, 4000)
   }
 
-  authCuentaFacebook () {
+  authCuentaFacebook() {
     //$('#avatar').attr('src', result.user.photoURL)
     //$('.modal').modal('close')
     //Materialize.toast(`Bienvenido ${result.user.displayName} !! `, 4000)
   }
 
-  authTwitter () {
+  authTwitter() {
     // TODO: Crear auth con twitter
   }
 }
