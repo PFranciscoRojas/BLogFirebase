@@ -32,10 +32,10 @@ $(() => {
         }
     });
     
+   
 
   // TODO: Evento boton inicio sesion
   $('#btnInicioSesion').click(() => {
-
     const user = firebase.auth().currentUser;
     if(user){
       return firebase.auth().signOut()

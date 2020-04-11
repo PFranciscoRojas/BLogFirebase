@@ -341,6 +341,9 @@ label
   text-align: center;
   width: 80% !important;
 }
+.registro-formulario .div-btnChangePassword {
+  text-align: center;
+}
 .registro-formulario .div-btnInicioSesion {
   text-align: center;
 }

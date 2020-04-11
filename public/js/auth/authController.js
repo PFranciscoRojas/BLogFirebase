@@ -19,6 +19,9 @@ $(() => {
         auth.autEmailPass(email,password)
     });
     
+     //TODO: Evento Cambiar Password
+     $('#btnChangePassword').click(()=> objAuth.cambiarPassword($('#emailSesion').val()))
+
     $("#authGoogle").click(() => objAuth.authCuentaGoogle());
     $("#authFB").click(() => objAuth.authCuentaFacebook());
 

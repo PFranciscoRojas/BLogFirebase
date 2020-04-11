@@ -1,6 +1,24 @@
 class Autenticacion {
-  autEmailPass(email, password) {
 
+  cambiarPassword(email){
+    const configuration = {
+      url: 'http://localhost:8080/public/'
+    }
+
+    firebase.auth().sendPasswordResetEmail(email,configuration)
+      .then(()=>{
+        Materialize.toast(`Se ha enviado un correo para restablecer la contraseña`, 5000)
+
+      })
+      .catch(error => {
+        console.error(error)
+        Materialize.toast(error.message, 4000)
+      })
+      $('.modal').modal('close')
+
+  }
+
+  autEmailPass(email, password) {
     firebase.auth().signInWithEmailAndPassword(email, password)
       .then(result => {
         if (result.user.emailVerified) {
